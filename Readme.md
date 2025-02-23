@@ -17,14 +17,14 @@ spotify-rmb.netlify.app
 
 ## 📂 Project Structure
 📂 Spotify-Clone
- ┣ 📂 assets  # Images, icons, and other media files
- ┣ 📂 css     # Stylesheets
- ┣ 📂 js      # JavaScript files
- ┣ 📂 songs   # Albums containing audio files
- ┣ 📜 index.html    # Main HTML file
- ┣ 📜 README.md     # Project documentation
- ┣ 📜 CHANGELOG.md  # Version release updates
- ┣ 📜 songs.json    # Version release updates
+ ┣ 📂 assets  # Images, icons, and other media files<br>
+ ┣ 📂 css     # Stylesheets<br>
+ ┣ 📂 js      # JavaScript files<br>
+ ┣ 📂 songs   # Albums containing audio files<br>
+ ┣ 📜 index.html    # Main HTML file<br>
+ ┣ 📜 README.md     # Project documentation<br>
+ ┣ 📜 CHANGELOG.md  # Version release updates<br>
+ ┣ 📜 songs.json    # Version release updates<br>
  ┣ 📜 json_populate.py  #python script to populate songs.json with 
                         links of audio album in songs folder
 
