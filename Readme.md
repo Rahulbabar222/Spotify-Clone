@@ -5,11 +5,19 @@ A functional Spotify Clone built with HTML, CSS, and JavaScript, featuring a sle
 [Spotify Clone](https://spotify-rmb.netlify.app "Visit website")
 
 ## 🚀 Features
-- 🎼 Play, pause, and skip tracks
-- 📜 Playlist and albums
-- 🎛️ Volume and progress control
-- 🔀 Shuffle and repeat functionality
-- 📱 Responsive design for mobile and desktop
+- 🎶 Play, Pause, and Stop music
+
+- 🔀 Shuffle songs in the playlist
+
+- 🔁 Repeat functionality for continuous playback
+
+- ⏩ Next & Previous track controls
+
+- 📊 Progress bar to track song duration
+
+- 🎚️ Volume control
+
+- 🎵 Responsive design for mobile and desktop
 
 ## 🛠️ Tech Stack
 - HTML

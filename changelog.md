@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 
 ---
+
+## [1.1.0] - 2025-02-23
+### Fixed
+- mute/umnute button placement for mobile devices.
+
+
 ## [1.1.0] - 2025-02-23
 ### Added
 - Implemented **shuffle and repeat** feature.
@@ -26,6 +32,10 @@ All notable changes to this project will be documented in this file.
 ---
 
 ## [Unreleased]
--
+- Implement playlist creation
+- Add a search functionality
+- Integrate with a real music API (e.g., Spotify API)
+- User authentication & saved playlists
+- Sleep timer 
 
 ---

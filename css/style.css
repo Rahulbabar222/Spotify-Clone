@@ -667,7 +667,7 @@ position:relative;
     }
 
     .volume{
-        top: 63px;
+        top: 60px;
     }
 
     .mute-unmute{
@@ -727,5 +727,9 @@ position:relative;
         top: 90px;
         width: 100vw;
         height: 60vh;
+    }
+
+    .mute-unmute{
+        left: 100px;
     }
 }
