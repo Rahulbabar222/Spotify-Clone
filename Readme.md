@@ -2,7 +2,7 @@
 A functional Spotify Clone built with HTML, CSS, and JavaScript, featuring a sleek UI, music controls, and playlist management.
 
 ## Live Demo
-spotify-rmb.netlify.app
+[Spotify Clone](https://spotify-rmb.netlify.app "Visit website")
 
 ## 🚀 Features
 - 🎼 Play, pause, and skip tracks
