@@ -1,0 +1,31 @@
+{
+    "indian": [
+        {
+            "title": "Indian",
+            "description": "Indian Artists"
+        },
+        "Songs/indian/Sanam Teri Kasam - Title Song .mp3",
+        "Songs/indian/Tere Bin - Raghav Chaitanya.mp3",
+        "Songs/indian/Tere bina - Zaeden .mp3",
+        "Songs/indian/Darshana - Hridayam  .mp3"
+    ],
+    "default": [
+
+        "Songs/default/Bruno Mars - Thats What I Like .mp3",
+        "Songs/default/Sanam Teri Kasam - Title Song .mp3",
+        "Songs/default/Tere Bin - Raghav Chaitanya.mp3",
+        "Songs/default/Lady Gaga, Bruno Mars - Die With A Smile.mp3",
+        "Songs/default/Tere bina - Zaeden .mp3",
+        "Songs/default/Darshana - Hridayam  .mp3",
+        "Songs/default/Travie McCoy Billionaire ft. Bruno Mars.mp3"
+    ],
+    "bruno": [
+        {
+            "title": "Bruno Mars",
+            "description": "Artist"
+        },
+        "Songs/bruno/Bruno Mars - Thats What I Like .mp3",
+        "Songs/bruno/Lady Gaga, Bruno Mars - Die With A Smile.mp3",
+        "Songs/bruno/Travie McCoy Billionaire ft. Bruno Mars.mp3"
+    ]
+}

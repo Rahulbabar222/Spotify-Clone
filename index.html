@@ -1,0 +1,204 @@
+<!-- xmlns="http://www.w3.org/2000/svg" used because not using directly -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="shortcut icon" href="asset/favicon.svg" type="image/svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utility.css">
+</head>
+
+<body>
+    <!-- nav bar -->
+    <div class="nav flex between items-center bg-black grey-font">
+        <div class="flex between items-center">
+            <div class="hamburger"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28"
+                    color="#ffffff" fill="none">
+                    <path d="M2 3L20 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M2 10L15 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M2 17L9 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path
+                        d="M18.25 19C18.25 20.6569 16.8509 22 15.125 22C13.3991 22 12 20.6569 12 19C12 17.3431 13.3991 16 15.125 16C16.8509 16 18.25 17.3431 18.25 19ZM18.25 19V10C18.6667 10.6 19 13.12 22 13.6"
+                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg></div>
+            <div class="logo"><img  class="invert" src="asset/logo.svg" alt="Logo"></div>
+            <div class="home flex items-center justify-center bg-grey ">
+                <svg class="homesvg" viewBox="0 0 24 24">
+                    <path
+                        d="M13.5 1.515a3 3 0 0 0-3 0L3 5.845a2 2 0 0 0-1 1.732V21a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6h4v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V7.577a2 2 0 0 0-1-1.732l-7.5-4.33z">
+                    </path>
+                </svg>
+            </div>
+            <div class="searchbar bg-grey flex items-center">
+                <svg class="searchsvg" viewBox="0 0 24 24">
+                    <path
+                        d="M10.533 1.27893C5.35215 1.27893 1.12598 5.41887 1.12598 10.5579C1.12598 15.697 5.35215 19.8369 10.533 19.8369C12.767 19.8369 14.8235 19.0671 16.4402 17.7794L20.7929 22.132C21.1834 22.5226 21.8166 22.5226 22.2071 22.132C22.5976 21.7415 22.5976 21.1083 22.2071 20.7178L17.8634 16.3741C19.1616 14.7849 19.94 12.7634 19.94 10.5579C19.94 5.41887 15.7138 1.27893 10.533 1.27893ZM3.12598 10.5579C3.12598 6.55226 6.42768 3.27893 10.533 3.27893C14.6383 3.27893 17.94 6.55226 17.94 10.5579C17.94 14.5636 14.6383 17.8369 10.533 17.8369C6.42768 17.8369 3.12598 14.5636 3.12598 10.5579Z">
+                    </path>
+                </svg>
+                <input class="textSearch bg-grey" type="text" placeholder="    What do you want to play today?">
+                <svg class="searchsvg1" viewBox="0 0 24 24">
+                    <path d="M15 15.5c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z"></path>
+                    <path
+                        d="M1.513 9.37A1 1 0 0 1 2.291 9h19.418a1 1 0 0 1 .979 1.208l-2.339 11a1 1 0 0 1-.978.792H4.63a1 1 0 0 1-.978-.792l-2.339-11a1 1 0 0 1 .201-.837zM3.525 11l1.913 9h13.123l1.913-9H3.525zM4 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v4h-2V3H6v3H4V2z">
+                    </path>
+                </svg>
+            </div>
+            <div class="menu"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28"
+                    color="#ffffff" fill="none">
+                    <path d="M20 12L10 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M20 5L4 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M20 19L4 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg></div>
+        </div>
+
+        <div class="empty"></div>
+
+        <div class="nav-button flex items-center">
+            <div class="premium"><span>Premium</span></div>
+            <div class="support"><span>Support</span></div>
+            <div class="download"><span>Download</span></div>
+            <div class="partition">|</div>
+            <div class="install flex items-center font14">
+                <svg class="installsvg" viewBox="0 -4 24 24">
+                    <path
+                        d="M4.995 8.745a.75.75 0 0 1 1.06 0L7.25 9.939V4a.75.75 0 0 1 1.5 0v5.94l1.195-1.195a.75.75 0 1 1 1.06 1.06L8 12.811l-.528-.528a.945.945 0 0 1-.005-.005L4.995 9.805a.75.75 0 0 1 0-1.06z">
+                    </path>
+                    <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13z"></path>
+                </svg>
+                <span>Install App</span>
+            </div>
+            <div class="signup font14"><span>Signup</span></div>
+            <button class="login font16"><span>Log in</span></button>
+        </div>
+    </div>
+
+    <!-- Container main -->
+    <div class="container flex items-center bg-black">
+
+        <!-- left container -->
+        <div class="left  bg-grey2 rounded m-1">
+            <div class="library-container flex">
+                <div class="library flex justify-center ">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zM15.5 2.134A1 1 0 0 0 14 3v18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.464a1 1 0 0 0-.5-.866l-6-3.464zM9 2a1 1 0 0 0-1 1v18a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1z">
+                        </path>
+                    </svg>
+                    <span>Your Library</span>
+                </div>
+                <div class="plus flex justify-center"><svg viewBox="-4 -4 24 24">
+                        <path
+                            d="M15.25 8a.75.75 0 0 1-.75.75H8.75v5.75a.75.75 0 0 1-1.5 0V8.75H1.5a.75.75 0 0 1 0-1.5h5.75V1.5a.75.75 0 0 1 1.5 0v5.75h5.75a.75.75 0 0 1 .75.75z">
+                        </path>
+                    </svg>
+                </div>
+
+            </div>
+            <h4 class="playlist">Playlist</h4>
+            <div class="library-list ">
+                <ul>
+
+                </ul>
+            </div>
+
+            <div>
+                <div class="footer flex  grey-font">
+                    <div class="footerlinks "> <a href="#"><span>Legal</span></a></div>
+                    <div class="footerlinks"><a href="#"><span>Safety & Privacy Center</span></a> </div>
+                    <div class="footerlinks"><a href="#"><span>Privacy Policy</span></a></div>
+                    <div class="footerlinks"><a href="#"><span>About Ads</span></a></div>
+                </div>
+                <div class="footer flex  grey-font">
+                    <div class="footerlinks"><a href="#"><span>Accessibility</span> </a></div>
+                    <div class="footerlinks"><a href="#" target="_blank"><span>Cookies</span></a></div>
+                </div>
+            </div>
+            <div>
+                <button class="language flex items-center justify-center">
+                    <svg viewBox="0 0 16 16">
+                        <path
+                            d="M8.152 16H8a8 8 0 1 1 .152 0zm-.41-14.202c-.226.273-.463.713-.677 1.323-.369 1.055-.626 2.496-.687 4.129h3.547c-.06-1.633-.318-3.074-.687-4.129-.213-.61-.45-1.05-.676-1.323-.194-.235-.326-.285-.385-.296h-.044c-.055.007-.19.052-.391.296zM4.877 7.25c.062-1.771.34-3.386.773-4.624.099-.284.208-.554.329-.806a6.507 6.507 0 0 0-4.436 5.43h3.334zm-3.334 1.5a6.507 6.507 0 0 0 4.436 5.43 7.974 7.974 0 0 1-.33-.806c-.433-1.238-.71-2.853-.772-4.624H1.543zm4.835 0c.061 1.633.318 3.074.687 4.129.214.61.451 1.05.677 1.323.202.244.336.29.391.297l.044-.001c.06-.01.19-.061.385-.296.226-.273.463-.713.676-1.323.37-1.055.626-2.496.687-4.129H6.378zm5.048 0c-.061 1.771-.339 3.386-.772 4.624-.082.235-.171.46-.268.674a6.506 6.506 0 0 0 4.071-5.298h-3.03zm3.031-1.5a6.507 6.507 0 0 0-4.071-5.298c.097.214.186.44.268.674.433 1.238.711 2.853.772 4.624h3.031z">
+                        </path>
+                    </svg>
+                    English
+                </button>
+            </div>
+        </div>
+
+        <!-- right container -->
+        <div class="right rounded m-1">
+            <div class="popular">
+                <h2>Popular albums and singles</h2>
+            </div>
+
+            <div  class="cardContainer flex">  </div>
+
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls flex justify-center column items-center">
+        <div class="mainControl flex justify-center">
+            <div class="currentSongInfo"> </div>
+
+            <div class="controlbuttons flex items-center">
+
+                <svg id="previous" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">
+                    <path fill="#ffffff"
+                        d="M13.75 13.0351C13.75 13.8459 12.8357 14.3196 12.1733 13.852L5.04034 8.81698C4.47592 8.41857 4.47592 7.58146 5.04034 7.18305L12.1733 2.14801C12.8357 1.68042 13.75 2.15416 13.75 2.96498L13.75 13.0351zM1.75 13.25C1.75 13.6642 2.08579 14 2.5 14 2.91421 14 3.25 13.6642 3.25 13.25L3.25 2.75C3.25 2.33579 2.91421 2 2.5 2 2.08579 2 1.75 2.33579 1.75 2.75V13.25z"
+                        class="color212121 svgShape"></path>
+                </svg>
+                <svg id="play" class="playPauseButton" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                    <path fill="none" d="M0 0h48v48H0z"></path>
+                    <path d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm-4 29V15l12 9-12 9z"
+                        fill="#ffffff" class="color000000 svgShape"></path>
+                </svg>
+                <svg id="next" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">
+                    <path fill="#ffffff"
+                        d="M2 2.96495C2 2.15413 2.91427 1.68039 3.57668 2.14798L10.7097 7.18302C11.2741 7.58143 11.2741 8.41854 10.7097 8.81695L3.57668 13.852C2.91427 14.3196 2 13.8458 2 13.035V2.96495zM14 2.75C14 2.33579 13.6642 2 13.25 2 12.8358 2 12.5 2.33579 12.5 2.75V13.25C12.5 13.6642 12.8358 14 13.25 14 13.6642 14 14 13.6642 14 13.25V2.75z"
+                        class="color212121 svgShape"></path>
+                </svg>
+            </div>
+            <div class="volume flex justify-center items-center"> 
+                <div class="mute-unmute" data-muted="false">
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" color="#ffffff" fill="none">
+                        <path d="M14 14.8135V9.18646C14 6.04126 14 4.46866 13.0747 4.0773C12.1494 3.68593 11.0603 4.79793 8.88232 7.02192C7.75439 8.17365 7.11085 8.42869 5.50604 8.42869C4.10257 8.42869 3.40084 8.42869 2.89675 8.77262C1.85035 9.48655 2.00852 10.882 2.00852 12C2.00852 13.118 1.85035 14.5134 2.89675 15.2274C3.40084 15.5713 4.10257 15.5713 5.50604 15.5713C7.11085 15.5713 7.75439 15.8264 8.88232 16.9781C11.0603 19.2021 12.1494 20.3141 13.0747 19.9227C14 19.5313 14 17.9587 14 14.8135Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M18 10L22 14M18 14L22 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    </svg> -->
+                    <svg  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24" height="24" color="#ffffff" fill="none">
+                        <path d="M14 14.8135V9.18646C14 6.04126 14 4.46866 13.0747 4.0773C12.1494 3.68593 11.0603 4.79793 8.88232 7.02192C7.75439 8.17365 7.11085 8.42869 5.50604 8.42869C4.10257 8.42869 3.40084 8.42869 2.89675 8.77262C1.85035 9.48655 2.00852 10.882 2.00852 12C2.00852 13.118 1.85035 14.5134 2.89675 15.2274C3.40084 15.5713 4.10257 15.5713 5.50604 15.5713C7.11085 15.5713 7.75439 15.8264 8.88232 16.9781C11.0603 19.2021 12.1494 20.3141 13.0747 19.9227C14 19.5313 14 17.9587 14 14.8135Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M17 9C17.6254 9.81968 18 10.8634 18 12C18 13.1366 17.6254 14.1803 17 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M20 7C21.2508 8.36613 22 10.1057 22 12C22 13.8943 21.2508 15.6339 20 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="volBarContainer" >
+                    <input class="volumeBar" type="range" name="volume" id="">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- seekbar -->
+        <div class="maincontrol2 flex justify-center">
+            <div class="timeLapsed grey-font">00.00</div>
+            <div class="seekbar">
+                <div class="seeker"></div>
+            </div>
+            <div class="totalTime grey-font">00.00</div>
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

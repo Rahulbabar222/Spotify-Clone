@@ -1,0 +1,159 @@
+.border{
+    border: 0.1px solid  red;
+}
+
+.flex{
+    display:flex;
+}
+
+.column{
+    flex-direction: column;
+}
+
+
+.justify-center{
+    justify-content: center;
+}
+
+.evenly{
+    justify-content: space-evenly;
+}
+
+.between{
+    justify-content: space-between;
+}
+
+
+.items-center{
+    align-items: center;
+}
+
+.bg-black{
+    background-color: black;
+    color: white;
+}
+
+.bg-grey{
+    background-color: #252525;
+}
+
+.bg-grey2{
+    background-color: #121212;
+}
+
+.invert{
+    filter: invert(1);
+    width: 25px;
+}
+
+.rounded{
+    border-radius: 5px;
+}
+
+.m-1{
+    margin: 2px 5px 10px 5px;
+}
+.p-1{
+    padding:10px;
+}s
+
+.font14{
+    font-size: 14px
+}
+
+.font16{
+    font-size: 16px;
+}
+
+.grey-font{
+    color: #b3b3b3;
+}
+
+/* Hide scrollbar by default */
+.container::-webkit-scrollbar {
+    width: 8px;
+    background: transparent; /* Track remains invisible */
+}
+
+/* Show scrollbar only on hover */
+.container:hover::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Scrollbar thumb (handle) */
+.container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    border-radius: 4px;
+    transition: background 0.3s ease;
+
+}
+
+/* Darker thumb on hover */
+.container:hover::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Scrollbar track (keeps it invisible) */
+.container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* For Firefox */
+.container {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent; /* Hides track */
+}
+
+.container:hover {
+    scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+}
+
+
+/* volume bar style */
+/* Base Style for Input Range */
+input[type="range"] {
+    -webkit-appearance: none; /* Remove default styling for Webkit browsers */
+    width: 100%;
+    height: 5px;
+    border-radius: 5px;
+    background: #ddd; /* Track background (unfilled part) */
+    outline: none;
+    cursor: pointer;
+}
+
+/* Progress (filled part) - WebKit (Chrome, Safari, Edge) */
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 5px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #00a000 var(--progress, 0%), #ddd var(--progress, 0%));
+}
+
+/* Thumb (slider handle) */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #00a000; /* Green thumb */
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -5px; /* Align with track */
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-track {
+    height: 5px;
+    border-radius: 5px;
+    background: #ddd; /* Background color */
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: #00a000; /* Green thumb */
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+

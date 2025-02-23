@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Spotify Mix';
+    src: local('Spotify Mix Regular'), local('Spotify-Mix-Regular'),
+        url('SpotifyMix-Regular.woff2') format('woff2'),
+        url('SpotifyMix-Regular.woff') format('woff'),
+        url('SpotifyMix-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
