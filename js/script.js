@@ -8,7 +8,6 @@ function secondsToMinutesSeconds(seconds) {
     if (isNaN(seconds) || seconds < 0) {
         return "00:00";
     }
-
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = Math.floor(seconds % 60);
 
@@ -47,12 +46,12 @@ function cardInsert(folder, title, description) {
 async function disAlbums(){
     let response = await fetch("songs.json");
         let info = await response.json();
-        let keys=Object.keys(info)
+        let keys=Object.keys(info);
 
         keys.forEach(key=>{
-            let e=info[key][0]
+            let e=info[key][0];
             if(typeof(e) === "object"){
-            cardInsert(key,e["title"],e["description"])
+            cardInsert(key,e["title"],e["description"]);
             }
         })
 
@@ -89,7 +88,7 @@ async function getSongs(folder = "default") {
         let playlist = document.querySelector(".library-list").getElementsByTagName("ul")[0];
         playlist.innerHTML = "";//emptying playlist before updating
         for (const song of songslist) {
-            let refined_name=song.split("/")[2].replace(".mp3","")
+            let refined_name=song.split("/")[2].replace(".mp3","");
             playlist.innerHTML += `<li class=" flex items-center">
         <svg class="musicicon invert" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" color="#000000" fill="none">
             <path d="M7 9.5C7 10.8807 5.88071 12 4.5 12C3.11929 12 2 10.8807 2 9.5C2 8.11929 3.11929 7 4.5 7C5.88071 7 7 8.11929 7 9.5ZM7 9.5V2C7.33333 2.5 7.6 4.6 10 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -103,9 +102,8 @@ async function getSongs(folder = "default") {
                 <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" />
                 <path d="M9.5 11.1998V12.8002C9.5 14.3195 9.5 15.0791 9.95576 15.3862C10.4115 15.6932 11.0348 15.3535 12.2815 14.6741L13.7497 13.8738C15.2499 13.0562 16 12.6474 16 12C16 11.3526 15.2499 10.9438 13.7497 10.1262L12.2815 9.32594C11.0348 8.6465 10.4115 8.30678 9.95576 8.61382C9.5 8.92086 9.5 9.6805 9.5 11.1998Z" fill="currentColor" />
                 </svg></div>
-         </li>`
+         </li>`;
         }
-        
 
          //attaching event listerner to each song in playlist
          Array.from(document.querySelector(".library-list").getElementsByTagName("li")).forEach(e => {
@@ -122,15 +120,15 @@ async function getSongs(folder = "default") {
                 icon.innerHTML = `<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ffffff" fill="none">
                 <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" />
                 <path d="M9.5 11.1998V12.8002C9.5 14.3195 9.5 15.0791 9.95576 15.3862C10.4115 15.6932 11.0348 15.3535 12.2815 14.6741L13.7497 13.8738C15.2499 13.0562 16 12.6474 16 12C16 11.3526 15.2499 10.9438 13.7497 10.1262L12.2815 9.32594C11.0348 8.6465 10.4115 8.30678 9.95576 8.61382C9.5 8.92086 9.5 9.6805 9.5 11.1998Z" fill="currentColor" />
-                </svg>`
+                </svg>`;
             });
 
-            //Changes playedsong icon to pausesong
-            let playPauseleft = e.querySelector(".playPauseIcon")
-            playPauseleft.innerHTML = `<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ffffff" fill="none">
+            //Changes playe icon to pause icon
+            let playPauseleft = e.querySelector(".playPauseIcon");
+            playPauseleft.innerHTML = `<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="limegreen" fill="none">
                     <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" />
                     <path d="M9.5 9L9.5 15M14.5 9V15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>`
+                    </svg>`;
              })
          });
 
@@ -139,6 +137,9 @@ async function getSongs(folder = "default") {
         console.error("Error fetching songs:", error);
     }
 }
+
+
+
 
 //Music play fucntion takes global variable currentSong defined at top
 function playMusic(song, pause = false) {
@@ -154,20 +155,21 @@ function playMusic(song, pause = false) {
                 `;
         playPauseButton.setAttribute("id", "pause");
     }
+        
 
     //Update song in control panel
     document.querySelector(".currentSongInfo").innerHTML = `<div class="playing">Playing<img src="/asset/music.gif" width="40px" alt=""></div>
-            <div class="displayName">${song.split("/")[2].replace(".mp3","")}</div>`
+            <div class="displayName">${song.split("/")[2].replace(".mp3","")}</div>`;
 
 }
 
-async function main() { 
+async function main() {  
     //preload default playlist and makes sure even when playlist is toggled between,
     //played music keep playing.
     default_playlist=await getSongs();
 
     //because default_playlist[0] fetches full path hence split for the name only
-    playMusic(default_playlist[0],true)
+    playMusic(default_playlist[0],true);
 
     //Call function to populate albums
     disAlbums();
@@ -193,34 +195,80 @@ async function main() {
 
     });
 
+
+
+    //Shuffle/Repeat and next song after song ended
+    const shuffleBtn=document.querySelector("#shuffle");
+    const repeatBtn = document.querySelector("#repeat");
+
+    let isShuffling=false;
+    let isRepeating=false;
+
+    // Shuffle Logic
+    shuffleBtn.addEventListener("click", ()=> {
+        isShuffling = !isShuffling; // Toggle shuffle
+        shuffleBtn.style.color = isShuffling ? "limegreen" : "white"; // UI indication
+    });
+
+    // Repeat Logic
+    repeatBtn.addEventListener("click",()=> {
+        isRepeating = !isRepeating; // Toggle repeat
+        repeatBtn.style.color = isRepeating ? "limegreen" : "white"; // UI indication
+    });
+    
+    currentSong.addEventListener("ended", function () {
+        let currSong="Songs/"+ currentSong.src.split("/Songs/")[1];
+        let currentIndex=songslist.indexOf(decodeURI(currSong));
+        
+        if (isRepeating) {
+            currentSong.currentTime = 0; // Restart same song
+            currentSong.play();
+            
+        } else if (isShuffling) {
+            let randomIndex;
+            do {
+                randomIndex = Math.floor(Math.random() * songslist.length);
+            } while (randomIndex === currentIndex); // if equal will exit while and again generate random num
+            currentIndex = randomIndex;
+            playMusic(songslist[currentIndex]);
+            
+        } else {
+            currentIndex = (currentIndex + 1) % songslist.length; //repeat playlist after last song
+            playMusic(songslist[currentIndex]);
+        }
+    });
+
+
+    
+
     // Eventlistener to previous button
     let previous = document.querySelector("#previous");
     previous.addEventListener("click", () => {
-        console.log("Previous song playing")
-        let current="Songs/"+ currentSong.src.split("/Songs/")[1]
-        let index = songslist.indexOf(decodeURI(current))
+        console.log("Previous song playing");
+        let current="Songs/"+ currentSong.src.split("/Songs/")[1];
+        let index = songslist.indexOf(decodeURI(current));
         if (index - 1 >= 0) {
-            playMusic(songslist[index - 1])
+            playMusic(songslist[index - 1]);
         }
         else {
-            console.log("This is first song in list")
+            console.log("This is first song in list");
         }
-    })
+    });
 
     // Eventlistener to next button
     let next = document.querySelector("#next");
     next.addEventListener("click", () => {
-        console.log("Next song playing")
+        console.log("Next song playing");
         
-        let current="Songs/"+ currentSong.src.split("/Songs/")[1]
-        let index = songslist.indexOf(decodeURI(current))
+        let current="Songs/"+ currentSong.src.split("/Songs/")[1];
+        let index = songslist.indexOf(decodeURI(current));
         if (index + 1 < songslist.length) {
-            playMusic(songslist[index + 1])
+            playMusic(songslist[index + 1]);
         }
         else {
-            console.log("This is last song in list")
+            console.log("This is last song in list");
         }
-    })
+    });
 
     //Rendering volume button
     document.querySelector(".volumeBar").addEventListener("change", (e) => {
@@ -230,15 +278,15 @@ async function main() {
             document.querySelector(".mute-unmute").innerHTML = `<svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ffffff" fill="none">
                         <path d="M14 14.8135V9.18646C14 6.04126 14 4.46866 13.0747 4.0773C12.1494 3.68593 11.0603 4.79793 8.88232 7.02192C7.75439 8.17365 7.11085 8.42869 5.50604 8.42869C4.10257 8.42869 3.40084 8.42869 2.89675 8.77262C1.85035 9.48655 2.00852 10.882 2.00852 12C2.00852 13.118 1.85035 14.5134 2.89675 15.2274C3.40084 15.5713 4.10257 15.5713 5.50604 15.5713C7.11085 15.5713 7.75439 15.8264 8.88232 16.9781C11.0603 19.2021 12.1494 20.3141 13.0747 19.9227C14 19.5313 14 17.9587 14 14.8135Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         <path d="M18 10L22 14M18 14L22 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                    </svg>`
+                    </svg>`;
         } else {
             document.querySelector(".mute-unmute").innerHTML = `<svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ffffff" fill="none">
                         <path d="M14 14.8135V9.18646C14 6.04126 14 4.46866 13.0747 4.0773C12.1494 3.68593 11.0603 4.79793 8.88232 7.02192C7.75439 8.17365 7.11085 8.42869 5.50604 8.42869C4.10257 8.42869 3.40084 8.42869 2.89675 8.77262C1.85035 9.48655 2.00852 10.882 2.00852 12C2.00852 13.118 1.85035 14.5134 2.89675 15.2274C3.40084 15.5713 4.10257 15.5713 5.50604 15.5713C7.11085 15.5713 7.75439 15.8264 8.88232 16.9781C11.0603 19.2021 12.1494 20.3141 13.0747 19.9227C14 19.5313 14 17.9587 14 14.8135Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         <path d="M17 9C17.6254 9.81968 18 10.8634 18 12C18 13.1366 17.6254 14.1803 17 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         <path d="M20 7C21.2508 8.36613 22 10.1057 22 12C22 13.8943 21.2508 15.6339 20 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>`
+                    </svg>`;
         }
-    })
+    });
 
     //eventlistener to mute/unmute
     document.querySelector(".mute-unmute").addEventListener("click", (e) => {
@@ -257,14 +305,14 @@ async function main() {
             currentSong.volume = 0.0;
             e.currentTarget.innerHTML = mute;
             e.currentTarget.dataset.muted = "true";
-            document.querySelector(".volumeBar").value = 0
-            console.log(`Volume set to: 0 / 100`)
+            document.querySelector(".volumeBar").value = 0;
+            console.log(`Volume set to: 0 / 100`);
         } else {
             currentSong.volume = 0.1;
-            document.querySelector(".volumeBar").value = 10
+            document.querySelector(".volumeBar").value = 10;
             e.currentTarget.innerHTML = unmute;
             e.currentTarget.dataset.muted = "false";
-            console.log(`Volume set to: 10 / 100`)
+            console.log(`Volume set to: 10 / 100`);
         }
     });
 
@@ -274,7 +322,7 @@ async function main() {
         document.querySelector(".timeLapsed").innerHTML = secondsToMinutesSeconds(currentSong.currentTime);
         document.querySelector(".totalTime").innerHTML = secondsToMinutesSeconds(currentSong.duration);
         document.querySelector(".seeker").style.left = (currentSong.currentTime / currentSong.duration) * 100 + `%`;
-    })
+    });
 
     //seekbar rendring
     let seekbar = document.querySelector(".seekbar");
@@ -285,7 +333,7 @@ async function main() {
         let seekbar_val = (e.offsetX / e.target.getBoundingClientRect().width) * 100;
         document.querySelector(".seeker").style.left = seekbar_val + "%";
         currentSong.currentTime = (seekbar_val * currentSong.duration) / 100;
-    })
+    });
 
     //placeholder update for search bar upon smaller screen size
     function updatePlaceholder() {
@@ -313,14 +361,14 @@ async function main() {
         //Adding X icon when hamburger is cliked
         document.querySelector(".plus").innerHTML = `<svg class="closeLib" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ffffff" fill="none">
             <path d="M18 6L12 12M12 12L6 18M12 12L18 18M12 12L6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>`
+            </svg>`;
         
         //Closing hamburger when X is clicked or home is cliked
         document.querySelector(".closeLib").addEventListener("click", () => {
             document.querySelector(".left").style.left = "-100%";
         });
 
-    })
+    });
 
     //menu Event listener
     document.querySelector(".menu").addEventListener("click", () => {
@@ -383,5 +431,4 @@ async function main() {
 })
 }
 
-
-main()
+main();

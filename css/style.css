@@ -44,14 +44,14 @@ body{
 .left{
     width: 24vw;
     min-width: 370px;
-    height:85vh;
+    height:87vh;
     margin-left: 5px;
 }
 
 
 .right{
     width: 76vw;
-    height:85vh;
+    height:87vh;
     margin-right: 5px;
     padding: 0px 20px;
     background: linear-gradient(to bottom,#252525,#111111 );
@@ -603,8 +603,8 @@ position:relative;
 @media (max-width: 770px){
 
     .volume{
-        top: 50px;
-        right: 20px;
+        top: 47px;
+        right: 5px;
         width: 130px;
     }
     .mute-unmute{
@@ -612,7 +612,7 @@ position:relative;
     }
 
     .volumeBar{
-        width: 90px;
+        width: 90px !important;
     }
 
     .cardContainer{
@@ -643,8 +643,6 @@ position:relative;
         width: 140px;
     }
     
-
-
     .maincontrol2{
         padding-top: 20px;
         width: 100vw;
@@ -655,8 +653,8 @@ position:relative;
     }
 }
 
-@media (max-width: 450px){
-
+@media (max-width: 560px){
+   
     .left , .right{
         height: 74vh;
     }
@@ -721,6 +719,10 @@ position:relative;
     }
 }
 @media (max-width: 400px){
+    .footer , .language{
+        display: none !important;
+    }
+
     .cardContainer{
         top: 90px;
         width: 100vw;

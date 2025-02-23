@@ -8,6 +8,7 @@ A functional Spotify Clone built with HTML, CSS, and JavaScript, featuring a sle
 - 🎼 Play, pause, and skip tracks
 - 📜 Playlist and albums
 - 🎛️ Volume and progress control
+- 🔀 Shuffle and repeat functionality
 - 📱 Responsive design for mobile and desktop
 
 ## 🛠️ Tech Stack
