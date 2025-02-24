@@ -453,24 +453,10 @@ body{
     height: 20px;
 }
 
-.seekbar{
-    width:45vw;
-    height: 5px;
-    background-color: #313131;
+.Seekbar{
+    width:45vw !important;
     position: absolute;
-    bottom: 9px;
-    cursor: pointer;
-}
-.seeker{
-    position: absolute;
-    bottom: -2.5px;
-    height: 10px;
-    width: 10px;
-    border-radius: 50%;
-    background-color: aliceblue;
-    left: 0%;
-    transition: left 0.5s;
-    
+    top: 6px;
 }
 
 .timeLapsed{
@@ -595,6 +581,10 @@ position:relative;
     .currentSongInfo{
         top: -20px;
     }
+
+    .Seekbar{
+        width: 40vw !important;
+    }
 }
 
 
@@ -648,8 +638,9 @@ position:relative;
         width: 100vw;
     }
 
-    .seekbar{
-        width: 80vw;
+    .Seekbar{
+        width: 80vw !important;
+        top: 28px;
     }
 }
 
@@ -710,8 +701,9 @@ position:relative;
         bottom: 25px;
     }
 
-    .seekbar{
-        width: 90vw;
+    .Seekbar{
+        width: 90vw !important;
+        top: 25px;
     }
 
     .playing{
