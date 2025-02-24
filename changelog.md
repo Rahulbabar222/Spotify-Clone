@@ -3,10 +3,13 @@
 All notable changes to this project will be documented in this file.
 
 ---
+## [1.1.2] - 2025-02-23
+### Fixed
+- Seekbar made dragable.
 
 ## [1.1.1] - 2025-02-23
 ### Fixed
-- mute/umnute button placement for mobile devices.
+- Mute/umnute button placement for mobile devices.
 
 
 ## [1.1.0] - 2025-02-23
