@@ -6,17 +6,11 @@ A functional Spotify Clone built with HTML, CSS, and JavaScript, featuring a sle
 
 ## 🚀 Features
 - 🎶 Play, Pause, and Stop music
-
 - 🔀 Shuffle songs in the playlist
-
 - 🔁 Repeat functionality for continuous playback
-
 - ⏩ Next & Previous track controls
-
 - 📊 Progress bar to track song duration
-
 - 🎚️ Volume control
-
 - 🎵 Responsive design for mobile and desktop
 
 ## 🛠️ Tech Stack
@@ -25,26 +19,26 @@ A functional Spotify Clone built with HTML, CSS, and JavaScript, featuring a sle
 - JavaScript
 
 ## 📂 Project Structure
-📂 Spotify-Clone
- ┣ 📂 assets  # Images, icons, and other media files<br>
- ┣ 📂 css     # Stylesheets<br>
- ┣ 📂 js      # JavaScript files<br>
- ┣ 📂 songs   # Albums containing audio files<br>
- ┣ 📜 index.html    # Main HTML file<br>
- ┣ 📜 README.md     # Project documentation<br>
- ┣ 📜 CHANGELOG.md  # Version release updates<br>
- ┣ 📜 songs.json    # Version release updates<br>
- ┣ 📜 json_populate.py  #python script to populate songs.json with 
-                        links of audio album in songs folder
-
+📂 Spotify-Clone  
+ ┣ 📂 assets  # Images, icons, and other media files  
+ ┣ 📂 css     # Stylesheets  
+ ┣ 📂 js      # JavaScript files  
+ ┣ 📂 songs   # Albums containing audio files  
+ ┣ 📜 index.html    # Main HTML file  
+ ┣ 📜 README.md     # Project documentation  
+ ┣ 📜 CHANGELOG.md  # Version release updates  
+ ┣ 📜 songs.json    # JSON file storing song data  
+ ┣ 📜 json_populate.py  # Python script to populate songs.json with links of audio album in songs folder  
 
 ## 🏗️ Installation & Setup
 1. Clone the repository:
+   ```bash
    git clone https://github.com/yourusername/spotify-clone.git
-
+   ```
 2. Navigate to the project folder:
+   ```bash
    cd Spotify-Clone
-
+   ```
 3. Open `index.html` in your browser.
 
 ## 📌 Usage
