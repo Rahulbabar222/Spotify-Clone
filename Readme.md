@@ -19,16 +19,18 @@ A functional Spotify Clone built with HTML, CSS, and JavaScript, featuring a sle
 - JavaScript
 
 ## 📂 Project Structure
+````
 📂 Spotify-Clone  
- ┣ 📂 assets  # Images, icons, and other media files  
- ┣ 📂 css     # Stylesheets  
- ┣ 📂 js      # JavaScript files  
- ┣ 📂 songs   # Albums containing audio files  
- ┣ 📜 index.html    # Main HTML file  
- ┣ 📜 README.md     # Project documentation  
- ┣ 📜 CHANGELOG.md  # Version release updates  
- ┣ 📜 songs.json    # JSON file storing song data  
- ┣ 📜 json_populate.py  # Python script to populate songs.json with links of audio album in songs folder  
+ ┣ 📂 assets            # Images, icons, and other media files  
+ ┣ 📂 css               # Stylesheets  
+ ┣ 📂 js                # JavaScript files  
+ ┣ 📂 songs             # Albums containing audio files  
+ ┣ 📜 index.html        # Main HTML file  
+ ┣ 📜 README.md         # Project documentation  
+ ┣ 📜 CHANGELOG.md      # Version release updates  
+ ┣ 📜 songs.json        # JSON file storing song data  
+ ┣ 📜 json_populate.py  # Python script to populate songs.json with links of audio album in songs folder
+````
 
 ## 🏗️ Installation & Setup
 1. Clone the repository:
