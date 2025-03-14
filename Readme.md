@@ -4,6 +4,8 @@ A functional Spotify Clone built with HTML, CSS, and JavaScript, featuring a sle
 ## Live Demo
 [Spotify Clone](https://spotify-rmb.netlify.app "Visit website")
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c9fa9de7-64a9-4640-bf18-fa59e1cf801b/deploy-status)](https://app.netlify.com/sites/spotify-rmb/deploys)
+
 ## 🚀 Features
 - 🎶 Play, Pause, and Stop music
 - 🔀 Shuffle songs in the playlist
